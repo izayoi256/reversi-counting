@@ -1,0 +1,12 @@
+services:
+
+  app:
+    build:
+      context: .docker/app
+    volumes:
+      - "./src:/app:${VOLUME_CONSISTENCY:-consistent}"
+    environment:
+      - HOST_UID
+    tty: true
+    ports:
+      - "${APP_PORT:-5173}:5173"
