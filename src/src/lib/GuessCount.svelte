@@ -31,7 +31,7 @@ const nextLevel = () => {
   while (true) {
     const black = correctBlack + Math.floor(Math.random() * 3) - 2;
     const white = correctWhite + Math.floor(Math.random() * 3) - 2;
-    if (black + white > 64) {
+    if (black + white > 64 || (correctBlack === black && correctWhite === white)) {
       continue;
     }
     newAnswersMap.set(`${black}-${white}`, [black, white, false]);
